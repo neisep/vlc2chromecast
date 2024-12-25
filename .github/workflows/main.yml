@@ -1,0 +1,54 @@
+name: Build vlc2chromecast
+
+permissions:
+  contents: write
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:  
+  build:    
+    runs-on: windows-latest
+    
+    steps:      
+      - uses: actions/checkout@v2
+      
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+
+      - name: Navigate to Workspace
+        run: cd $GITHUB_WORKSPACE
+
+      - name: Echo Workspace
+        run: echo $GITHUB_WORKSPACE
+
+
+      - name: Restore Packages
+        run: nuget restore vlc2chromecast.sln
+
+      - name: Build Solution
+        run: |
+          msbuild.exe vlc2chromecast.sln /p:platform="Any CPU" /p:configuration="Release"
+        
+      - name: Navigate to Release dir
+        run: cd vlc2chromecast\vlc2chromecast\bin\net8.0-windows\release
+        
+      - name: Archive Release
+        uses: thedoctor0/zip-release@0.7.1
+        with:
+          type: 'zip'
+          filename: 'vlc2chromecast.zip'
+          path: '${{github.workspace}}\vlc2chromecast\vlc2chromecast\bin\release'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+          
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: vlc2chromecast.zip
