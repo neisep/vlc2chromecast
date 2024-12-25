@@ -36,14 +36,14 @@ jobs:
           msbuild.exe vlc2chromecast.sln /p:platform="Any CPU" /p:configuration="Release"
         
       - name: Navigate to Release dir
-        run: cd bin\net8.0-windows\release
+        run: cd vlc2chromecast\bin\Release\net8.0-windows\
         
       - name: Archive Release
         uses: thedoctor0/zip-release@0.7.1
         with:
           type: 'zip'
           filename: 'vlc2chromecast.zip'
-          path: '${{github.workspace}}\bin\release'
+          path: '${{github.workspace}}\vlc2chromecast\bin\Release\net8.0-windows'
           exclusions: '*.git* /*node_modules/* .editorconfig'
           
       - name: Release
