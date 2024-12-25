@@ -1,0 +1,4 @@
+# vlc2chromecast
+small app to send videos to chromecast with help of videolan
+
+This application will only work as wrapper around VideoLan basicly, cause it will open a process with arguments to broadcast to chromecast
