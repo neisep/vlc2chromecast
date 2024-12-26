@@ -1,4 +1,4 @@
-[![Github stats](https://img.shields.io/github/downloads/neisep/netshare/total.svg?style=for-the-badge&color=red)](https://somsubhra.github.io/github-release-stats/?username=neisep&repository=vlc2chromecast)
+[![Github stats](https://img.shields.io/github/downloads/neisep/vlc2chromecast/total.svg?style=for-the-badge&color=red)](https://somsubhra.github.io/github-release-stats/?username=neisep&repository=vlc2chromecast)
 
 # vlc2chromecast
 small app to send videos to chromecast with help of videolan
