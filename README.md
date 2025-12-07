@@ -1,15 +1,58 @@
 [![Github stats](https://img.shields.io/github/downloads/neisep/vlc2chromecast/total.svg?style=for-the-badge&color=red)](https://somsubhra.github.io/github-release-stats/?username=neisep&repository=vlc2chromecast)
 
-# vlc2chromecast
-small app to send videos to chromecast with help of videolan
+# 📺 vlc2chromecast
 
-<img src="https://raw.githubusercontent.com/neisep/vlc2chromecast/master/software.png"/>
+A simple **C# application** to stream videos from **VLC Media Player** directly to a **Chromecast** device.  
+It acts as a bridge between VLC and Chromecast, making it easy to cast local media files.
 
-This application will only work as wrapper around VideoLan basicly, cause it will open a process with arguments to broadcast to chromecast
+---
 
-Application has two settings that needs to be filled else it won't work, there is currently no validation for it.
+## ✨ Features
+- Stream local videos from VLC to Chromecast
+- Lightweight Windows application
+- Built with C# / .NET
+- No complicated setup required
 
-1. Fill in the ip adress to your chromecast
-2. Fill in the path to video lan player (vlc.exe)
+---
 
-Then simple drag the video file to application and it will try to automatically start vlc with prefered settings.
+## 📦 Installation
+1. Download exe from release section
+---
+
+## 🛠 Usage
+1. Ensure your Chromecast is on the same network as your computer.
+2. Launch **vlc2chromecast.exe**.
+3. Select the video file you want to play.
+4. The video will start streaming on your Chromecast via VLC.
+
+---
+
+## 📸 Screenshot
+![vlc2chromecast Screenshot](software.png)
+
+---
+
+## ⚙️ Requirements
+- Windows OS
+- VLC Media Player installed
+- Chromecast device on the same network
+- .NET Framework (or .NET runtime as required by the project)
+
+---
+
+## 🤝 Contributing
+Contributions are welcome:
+- Fork the repo
+- Create a branch for your changes
+- Submit a pull request
+
+---
+
+## 📄 License
+Licensed under **GPL-3.0**. See the LICENSE file for details.
+
+---
+
+## 📬 Contact
+Created by [neisep](https://github.com/neisep).  
+Open an issue for suggestions or improvements.
